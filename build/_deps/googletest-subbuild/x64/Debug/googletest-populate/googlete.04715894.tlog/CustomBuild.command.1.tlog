@@ -1,0 +1,152 @@
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-MKDIR.RULE
+setlocal
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/tmp/googletest-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-DOWNLOAD.RULE
+setlocal
+cd C:\Users\pawel\Desktop\Tietoevry\player\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-UPDATE.RULE
+setlocal
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-PATCH.RULE
+setlocal
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-CONFIGURE.RULE
+setlocal
+cd C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-BUILD.RULE
+setlocal
+cd C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-INSTALL.RULE
+setlocal
+cd C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\BD4848A2AF4F28FD846ABFB7611BA7FF\GOOGLETEST-POPULATE-TEST.RULE
+setlocal
+cd C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\6C5867E095D32666F252D51F72E96A9E\GOOGLETEST-POPULATE-COMPLETE.RULE
+setlocal
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/Debug/googletest-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/Debug/googletest-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\3A24E939E2EA99C01AF076030B550B57\GOOGLETEST-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\PLAYER\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild -BC:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild --check-stamp-file C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

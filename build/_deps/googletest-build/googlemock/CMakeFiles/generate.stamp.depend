@@ -1,0 +1,10 @@
+# CMake generation dependency list for this directory.
+C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googlemock/CMakeLists.txt
+C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googlemock/cmake/gmock.pc.in
+C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googlemock/cmake/gmock_main.pc.in
+D:/Programy/Visual Studio/Community 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake
+D:/Programy/Visual Studio/Community 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.25/Modules/CheckIncludeFile.cmake
+D:/Programy/Visual Studio/Community 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.25/Modules/CheckLibraryExists.cmake
+D:/Programy/Visual Studio/Community 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake
+D:/Programy/Visual Studio/Community 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.25/Modules/FindPackageMessage.cmake
+D:/Programy/Visual Studio/Community 2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.25/Modules/FindThreads.cmake
