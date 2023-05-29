@@ -10,8 +10,15 @@
 class FileValidator
 {
 public:
+	FileValidator() = default;
+	~FileValidator() = default;
 
 	bool checkIfFilesAreCorrect(const std::string& mapPath, const std::string& statusPath, const std::string& ordersPath);
+
+	bool validateMap(const std::string& mapPath);
+	bool validateStatus(const std::string& statusPath);
+	bool validateOrders(const std::string& ordersPath);
+
 private:
 
 	// this collection allows for easy verification of existing unit types
@@ -35,8 +42,5 @@ private:
 
 	// that collects units to check their id and verify their action
 
-	bool validateMap(const std::string& mapPath);
-	bool validateStatus(const std::string& statusPath);
-	bool validateOrders(const std::string& ordersPath);
 };
 

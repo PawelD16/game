@@ -19,15 +19,16 @@ bool FileValidator::checkIfFilesAreCorrect(const std::string& mapPath, const std
 	// reseting the collection with every iteration of the game
 	mapRepresentation.clear();
 
-
 	if (!validateMap(mapPath))
 	{
 		return false;
 	}
+
 	if (!validateStatus(statusPath))
 	{
 		return false;
 	}
+
 	if (!validateOrders(ordersPath))
 	{
 		return false;
