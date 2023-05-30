@@ -1,0 +1,10 @@
+^C:\USERS\PAWEL\DESKTOP\TIETOEVRY\MEDIATOR\BUILD\CMAKEFILES\FE78179F60AAED34382F3C32CFB38FB7\GENERATE.STAMP.RULE
+setlocal
+"D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/pawel/Desktop/Tietoevry/mediator -BC:/Users/pawel/Desktop/Tietoevry/mediator/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/pawel/Desktop/Tietoevry/mediator/build/mediator.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

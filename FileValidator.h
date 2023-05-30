@@ -6,6 +6,8 @@
 #include <vector>
 #include <map>
 
+#include "consts.h"
+
 
 class FileValidator
 {

@@ -1,18 +1,6 @@
 #include "fileValidator.h"
 
 
-const std::vector<char> FileValidator::possibleUnitTypes{ 'K', 'S', 'A', 'P', 'R', 'C', 'W', 'B' };
-
-const std::map<char, int> FileValidator::playerTypesToBaseNumbers{
-	{'P', 1},
-	{'E', 2}
-};
-
-const std::map<char, std::vector<char>> FileValidator::allowedActionsToUnitTypes{
-	{'A', {'K', 'S', 'A', 'P', 'R', 'C', 'W'}},
-	{'A', {'K', 'S', 'A', 'P', 'R', 'C', 'W'}},
-	{'B', {'B'}}
-};
 
 bool FileValidator::checkIfFilesAreCorrect(const std::string& mapPath, const std::string& statusPath, const std::string& ordersPath)
 {
@@ -94,11 +82,11 @@ bool FileValidator::validateStatusLineAndPlaceOnMap(const std::string& line)
 
 bool FileValidator::placeOnMapAndVerifyIfOwnershipOverlap(int posX, int posY, std::string owner)
 {
-	int currElem = mapRepresentation[posX][posY];
+	char currElem = mapRepresentation[posX][posY];
 
-	std::vector<int> keys;
-	for (const auto& [k, v] : playerTypesToBaseNumbers) {
-		keys.push_back(k);
+	std::vector<char> keys;
+	for (const auto& kv : playerTypesToBaseNumbers) {
+		keys.push_back(kv.first);
 	}
 
 	// verifying owner (whether it is a correct char)
@@ -132,8 +120,8 @@ bool FileValidator::validateMap(const std::string& mapPath)
 	// but doing it this way makes sure that is will work
 	// even if we were to add more players in the future
 	std::vector<int> values;
-	for (const auto& [k, v] : playerTypesToBaseNumbers) {
-		values.push_back(v);
+	for (const auto& kv : playerTypesToBaseNumbers) {
+		values.push_back(kv.second);
 	}
 
 	std::string possibleChars(values.begin(), values.end());
