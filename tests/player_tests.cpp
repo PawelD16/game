@@ -315,7 +315,8 @@ TEST_F(AllFilesTogether, AttackEnemyUnit)
 		"P B 0 9 0 98 A\n"
 		"E B 1 0 0 150 A\n"
 		"E C 2 2 0 50\n"
-		"P A 3 7 0 50";
+		"P A 3 7 0 50\n"
+		"E W 4 0 0 20";
 
 	const std::string expectedOrders =
 		"3 M 7 0\n"

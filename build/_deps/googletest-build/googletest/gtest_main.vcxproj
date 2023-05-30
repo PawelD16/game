@@ -78,6 +78,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest/include" /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest" -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -102,10 +103,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -118,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest/include" /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest" -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
@@ -142,10 +144,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -158,6 +160,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest/include" /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest" -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
@@ -182,10 +185,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -198,6 +201,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest/include" /external:I "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-src/googletest" -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
@@ -221,10 +225,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\pawel\Desktop\Tietoevry\player;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest\include;C:\Users\pawel\Desktop\Tietoevry\player\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

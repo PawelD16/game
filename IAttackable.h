@@ -8,40 +8,18 @@ public:
 		int positionX,
 		int positionY,
 		int unitID
-	) :
-		durability(durability),
-		positionX(positionX),
-		positionY(positionY),
-		unitID(unitID)
-	{
-	}
+	);
 	virtual ~IAttackable() = default;
 	virtual char getLetter() = 0;
 
-	void getDamaged(int damage)
-	{
-		durability -= damage;
-	}
+	void getDamaged(int damage);
+	int getDurability() const;
 
-	int getDurability() const
-	{
-		return durability;
-	}
+	int getPositionX() const;
 
-	int getPositionX() const
-	{
-		return positionX;
-	}
+	int getPositionY() const;
 
-	int getPositionY() const
-	{
-		return positionY;
-	}
-
-	int getUnitID() const
-	{
-		return unitID;
-	}
+	int getUnitID() const;
 
 protected:
 	int durability;

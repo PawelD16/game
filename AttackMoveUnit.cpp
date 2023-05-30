@@ -111,14 +111,6 @@ bool AttackMoveUnit::tryToAttack(IAttackable& opponentUnit)
 	return eval;
 }
 
-/*
-AttackMoveUnit& AttackMoveUnit::refreshForNewTourAndReturnThis(int leftOverDurability)
-{
-	durability = leftOverDurability;
-	return *this;
-}
-*/
-
 char AttackMoveUnit::getLetter()
 {
 	return classLetter;

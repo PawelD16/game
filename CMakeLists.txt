@@ -25,6 +25,7 @@ set(SOURCES
 	AttackMoveUnit.cpp
 	Archer.cpp
 	Worker.cpp
+	IAttackable.cpp
 )
 
 # Add the header files for each class
@@ -41,6 +42,8 @@ set(HEADERS
 	Worker.h
 	IAttackable.h
 )
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 # Add the source and header files to the executable
 target_sources(player PRIVATE ${SOURCES} ${HEADERS})

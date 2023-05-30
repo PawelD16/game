@@ -31,6 +31,9 @@
     <ClCompile Include="C:\Users\pawel\Desktop\Tietoevry\player\Worker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\pawel\Desktop\Tietoevry\player\IAttackable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\pawel\Desktop\Tietoevry\player\Base.h">

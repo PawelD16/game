@@ -7,4 +7,3 @@ public:
 	Pikeman(int durability, int positionX, int positionY, int unitID);
 	~Pikeman() override = default;
 };
-

@@ -27,7 +27,7 @@ Player::Player(
 	statusPath(statusPath),
 	ordersPath(ordersPath),
 	timeLimit(timeLimit),
-	gold(DEFAULT_GOLD_AMOUNT)
+	gold(0)
 {
 	// all files are necessary so the program must terminate when even one of them doesn't exist
 	// the program could create a file, but that would mean that it and its opponent wouldn't
@@ -79,13 +79,13 @@ void Player::drawMapAndGatherAvailableMines()
 	std::string line;
 	for (int lineCounter = 0; std::getline(mapFile, line); ++lineCounter)
 	{
-		map.push_back(std::vector<char>(line.begin(), line.end()));
+		map.emplace_back(line.begin(), line.end());
 
 		for (int i = 0; static_cast<size_t>(i) < map[lineCounter].size();++i)
 		{
 			if (map[lineCounter][i] == MINE_POSITION && isMineAvailable(lineCounter, i, opponentWorkers))
 			{
-				availableMines.push_back(std::make_pair(i, lineCounter));
+				availableMines.emplace_back(i, lineCounter);
 			}
 		}
 	}
@@ -142,12 +142,12 @@ bool distanceFromBaseComparator(std::pair<int, int> coordinates1, std::pair<int,
 
 void Player::writeOrders(const std::vector<std::string>& orders) const
 {
-	std::ofstream orderFile(ordersPath);
-
-	if (!orderFile.is_open())
+	if (!doesFileExist(ordersPath))
 	{
 		throw std::runtime_error(NO_ORDERS_FILE + ordersPath);
 	}
+
+	std::ofstream orderFile(ordersPath);
 
 	for (const auto& order : orders)
 	{
@@ -187,6 +187,7 @@ void Player::takeATurn()
 	// this structure is repeated, but this is the easiest way of stopping the program
 	// when taking it to an outside method the only way is to throw an exception
 	// which is less elegant
+	// this also doesn't require an additional thread to time the method
 	//______________________________________
 	if (isSecondLeftOfTimeLimit(startTime))
 	{
@@ -195,7 +196,12 @@ void Player::takeATurn()
 	}
 	//______________________________________
 
-	std::sort(availableMines.begin(), availableMines.end(), std::bind(distanceFromBaseComparator, std::placeholders::_1, std::placeholders::_2, playerBase));
+
+	std::sort(availableMines.begin(), availableMines.end(), [this](auto&& PH1, auto&& PH2)
+	{
+		return distanceFromBaseComparator(std::forward<decltype(PH1)>(PH1), std::forward<decltype(PH2)>(PH2),
+		                                  playerBase);
+	});
 
 	tryToProduce(orders);
 
@@ -439,7 +445,7 @@ void Player::tryToProduce(std::vector<std::string>& orders)
 bool doesFileExist(const std::string& filePath)
 {
 	std::ifstream file(filePath);
-	bool res = file.good();
+	const bool res = file.good();
 	file.close();
 	return res;
 }

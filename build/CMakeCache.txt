@@ -529,8 +529,6 @@ _Python_EXECUTABLE:INTERNAL=C:/Users/pawel/AppData/Local/Programs/Python/Python3
 //Python Properties
 _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;2;64;;cp311-win_amd64;C:\Users\pawel\AppData\Local\Programs\Python\Python311\Lib;C:\Users\pawel\AppData\Local\Programs\Python\Python311\Lib;C:\Users\pawel\AppData\Local\Programs\Python\Python311\Lib\site-packages;C:\Users\pawel\AppData\Local\Programs\Python\Python311\Lib\site-packages
 _Python_INTERPRETER_SIGNATURE:INTERNAL=0702b4b3d6c986eb4f01c99b56120e8d
-//Interpreter reason failure
-_Python_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 cmake_package_name:INTERNAL=GTest

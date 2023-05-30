@@ -10,6 +10,7 @@
 #include <chrono>
 #include <algorithm>
 #include <random>
+
 #include "UnitStatsConsts.h"
 #include "AttackMoveUnit.h"
 #include "Knight.h"
@@ -44,7 +45,6 @@ private:
 	Base opponentBase;
 
 	std::vector<std::pair<int, int>> availableMines;
-	//std::vector<std::pair<int, int>> obstacles;
 	std::vector<std::vector<char>> map;
 
 	std::string mapPath;
@@ -67,23 +67,6 @@ private:
 	std::vector<std::vector<int>> createMapClipForUnit(const AttackMoveUnit& unit) const;
 	int getVerifiedMapClipValue(int posX, int posY, int currPosX, int currPosY, int maxRange) const;
 
-	/*
-	 this function checks the map and writes the results to a file (so they are cached)
-	 it also return read values so other methods that need them do not unnecessarily reread the file
-
-	"playerBase.txt" file contains locations of availableMines and obstacles
-	its structure is as follows:
-	x1 y1	<- availableMines
-	...
-	x2 y2
-
-	x3 y3	<- obstacles
-	...
-	x4 y4
-
-	static std::pair<std::vector<std::pair<int, int>>, std::vector<std::pair<int, int>>> getMinesAndObstaclesFromMap(const std::string& mapPath);
-	static std::pair<std::vector<std::pair<int, int>>, std::vector<std::pair<int, int>>> getMinesAndObstaclesFromFile();
-	 */
 };
 
 bool doesFileExist(const std::string& filePath);

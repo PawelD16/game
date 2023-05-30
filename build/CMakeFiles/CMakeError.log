@@ -1,13 +1,13 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-hi82s2
+Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-xulne1
 
-Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ce0cc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
+Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_d03d3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
 
   Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.35.32215 dla x64
-  src.c
   Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ce0cc.dir\Debug\\" /Fd"cmTC_ce0cc.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-hi82s2\src.c"
-C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-hi82s2\src.c(1,10): fatal  error C1083: Nie można otworzyć pliku dołącz: 'pthread.h': No such file or directory [C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-hi82s2\cmTC_ce0cc.vcxproj]
+  src.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d03d3.dir\Debug\\" /Fd"cmTC_d03d3.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-xulne1\src.c"
+C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-xulne1\src.c(1,10): fatal  error C1083: Nie można otworzyć pliku dołącz: 'pthread.h': No such file or directory [C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-xulne1\cmTC_d03d3.vcxproj]
 
 
 Source file was:
@@ -33,28 +33,28 @@ int main(void)
 
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-kompiv
+Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-63vvmr
 
-Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_e1e75.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
+Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_4efc2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
 
   Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.35.32215 dla x64
-  CheckFunctionExists.c
   Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e1e75.dir\Debug\\" /Fd"cmTC_e1e75.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-kompiv\CheckFunctionExists.c"
-LINK : fatal error LNK1104: nie można otworzyć pliku "pthreads.lib" [C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-kompiv\cmTC_e1e75.vcxproj]
+  CheckFunctionExists.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4efc2.dir\Debug\\" /Fd"cmTC_4efc2.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-63vvmr\CheckFunctionExists.c"
+LINK : fatal error LNK1104: nie można otworzyć pliku "pthreads.lib" [C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-63vvmr\cmTC_4efc2.vcxproj]
 
 
 
 Determining if the function pthread_create exists in the pthread failed with the following output:
-Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-pf19lw
+Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-ttmzwj
 
-Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_2167b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
+Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ce3fa.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
 
   Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.35.32215 dla x64
   CheckFunctionExists.c
   Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2167b.dir\Debug\\" /Fd"cmTC_2167b.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-pf19lw\CheckFunctionExists.c"
-LINK : fatal error LNK1104: nie można otworzyć pliku "pthread.lib" [C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-pf19lw\cmTC_2167b.vcxproj]
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ce3fa.dir\Debug\\" /Fd"cmTC_ce3fa.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-ttmzwj\CheckFunctionExists.c"
+LINK : fatal error LNK1104: nie można otworzyć pliku "pthread.lib" [C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-ttmzwj\cmTC_ce3fa.vcxproj]
 
 
 

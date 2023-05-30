@@ -10,9 +10,4 @@ public:
 	~Base() override = default;
 
 	char getLetter() override;
-
-	//private:
-		// int durability;
-		//int positionX;
-		//int positionY;
 };

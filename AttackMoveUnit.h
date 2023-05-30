@@ -23,8 +23,8 @@ public:
 	~AttackMoveUnit() override = default;;
 
 	void moveCloserToGoal(int goalPosX, int goalPosY, std::vector<std::vector<int>>& mapClip, int distance);
+	// this method ensures that an illegal attack won't be carried out
 	bool tryToAttack(IAttackable& opponentUnit);
-	// AttackMoveUnit& refreshForNewTourAndReturnThis(int leftOverDurability);
 
 	char getLetter() override;
 	int getSpeed() const;
@@ -32,16 +32,9 @@ public:
 
 protected:
 	char classLetter;
-
-	// int durability;
-	// int speed;
 	int cost;
 	int range;
 	int build_time;
-	// int positionX{};
-	// int positionY{};
-
-	// bool hasAttacked;
 	int currentTourSpeed;
 
 	int calculateDistanceFromCurrentPos(int positionX, int positionY) const;

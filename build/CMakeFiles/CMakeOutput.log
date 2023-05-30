@@ -7,7 +7,7 @@ Id flags:
 The output was:
 0
 MSBuild version 17.5.0+6f08c67f3 for .NET Framework
-Kompilacja rozpoczęła się 28.05.2023 21:02:08.
+Kompilacja rozpoczęła się 30.05.2023 20:06:48.
 Included response file: D:\Programy\Visual Studio\Community 2022\MSBuild\Current\Bin\amd64\MSBuild.rsp
 
 Projekt "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\3.25.1-msvc1\CompilerIdC\CompilerIdC.vcxproj" w węźle 1 (domyślne elementy docelowe).
@@ -35,7 +35,7 @@ Kompilacja powiodła się.
     Ostrzeżenia: 0
     Liczba błędów: 0
 
-Czas, który upłynął: 00:00:01.04
+Czas, który upłynął: 00:00:01.44
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -52,7 +52,7 @@ Id flags:
 The output was:
 0
 MSBuild version 17.5.0+6f08c67f3 for .NET Framework
-Kompilacja rozpoczęła się 28.05.2023 21:02:09.
+Kompilacja rozpoczęła się 30.05.2023 20:06:50.
 Included response file: D:\Programy\Visual Studio\Community 2022\MSBuild\Current\Bin\amd64\MSBuild.rsp
 
 Projekt "C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\3.25.1-msvc1\CompilerIdCXX\CompilerIdCXX.vcxproj" w węźle 1 (domyślne elementy docelowe).
@@ -80,7 +80,7 @@ Kompilacja powiodła się.
     Ostrzeżenia: 0
     Liczba błędów: 0
 
-Czas, który upłynął: 00:00:00.77
+Czas, który upłynął: 00:00:00.94
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -90,28 +90,28 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 The CXX compiler identification is MSVC, found in "C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/3.25.1-msvc1/CompilerIdCXX/CompilerIdCXX.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-9bo08o
+Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-pr1cyx
 
-Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_01471.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
+Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_8da16.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
 
   Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.35.32215 dla x64
   CMakeCCompilerABI.c
   Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_01471.dir\Debug\\" /Fd"cmTC_01471.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c"
-  cmTC_01471.vcxproj -> C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-9bo08o\Debug\cmTC_01471.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8da16.dir\Debug\\" /Fd"cmTC_8da16.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c"
+  cmTC_8da16.vcxproj -> C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-pr1cyx\Debug\cmTC_8da16.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-e2zrty
+Change Dir: C:/Users/pawel/Desktop/Tietoevry/player/build/CMakeFiles/CMakeScratch/TryCompile-w39q1p
 
-Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_722c5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
+Run Build Command(s):D:/Programy/Visual Studio/Community 2022/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_a600e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.0+6f08c67f3 for .NET Framework
 
   Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.35.32215 dla x64
   CMakeCXXCompilerABI.cpp
   Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_722c5.dir\Debug\\" /Fd"cmTC_722c5.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp"
-  cmTC_722c5.vcxproj -> C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-e2zrty\Debug\cmTC_722c5.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a600e.dir\Debug\\" /Fd"cmTC_a600e.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\Programy\Visual Studio\Community 2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp"
+  cmTC_a600e.vcxproj -> C:\Users\pawel\Desktop\Tietoevry\player\build\CMakeFiles\CMakeScratch\TryCompile-w39q1p\Debug\cmTC_a600e.exe
 
 
 
