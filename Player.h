@@ -56,7 +56,7 @@ private:
 	char producing{};
 
 	static bool isMineAvailable(int posX, int posY, const std::vector<AttackMoveUnit>& opponentWorkers);
-	bool isSecondLeftOfTimeLimit(const std::chrono::steady_clock::time_point& startTime) const;
+	bool isSecondLeftOfTimeLimit(const std::chrono::high_resolution_clock::time_point& startTime) const;
 	void writeOrders(const std::vector<std::string>& orders) const;
 
 	void drawMapAndGatherAvailableMines();

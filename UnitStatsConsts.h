@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <climits>
 
 //Knight
 static constexpr int KNIGHT_SPEED = 5;

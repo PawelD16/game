@@ -170,7 +170,7 @@ bool Player::isMineAvailable(int posX, int posY, const std::vector<AttackMoveUni
 	return true;
 }
 
-bool Player::isSecondLeftOfTimeLimit(const std::chrono::steady_clock::time_point& startTime) const
+bool Player::isSecondLeftOfTimeLimit(const std::chrono::high_resolution_clock::time_point& startTime) const
 {
 	return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - startTime).count() >= timeLimit * 1000 - 1000;
 }
@@ -215,13 +215,14 @@ void Player::takeATurn()
 
 	for (auto& i : ownUnits)
 	{
+		std::vector<std::vector<int>> mapClip = createMapClipForUnit(i);
 		if (isAWorker(i) && !availableMines.empty())
 		{
-			i.moveCloserToGoal(availableMines[0].first, availableMines[0].second, createMapClipForUnit(i), 0);
+			i.moveCloserToGoal(availableMines[0].first, availableMines[0].second, mapClip, 0);
 		}
 		else
 		{
-			i.moveCloserToGoal(opponentBase.getPositionX(), opponentBase.getPositionY(), createMapClipForUnit(i), i.getRange());
+			i.moveCloserToGoal(opponentBase.getPositionX(), opponentBase.getPositionY(), mapClip, i.getRange());
 		}
 
 		orders.push_back(

@@ -76,6 +76,8 @@
         "random": "cpp",
         "set": "cpp",
         "unordered_set": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "string_view": "cpp",
+        "ranges": "cpp"
     }
 }

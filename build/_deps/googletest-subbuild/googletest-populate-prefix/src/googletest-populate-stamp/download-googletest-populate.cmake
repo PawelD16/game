@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(STATUS "verifying file...
-       file='C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'")
+       file='/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'")
 
-  file("" "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip" actual_value)
+  file("" "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(STATUS " hash of
-    C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip
+    /home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip
   does not match expected value
     expected: ''
       actual: '${actual_value}'")
@@ -71,7 +71,7 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if("C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip" STREQUAL "")
+if("/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip" STREQUAL "")
   message(FATAL_ERROR "LOCAL can't be empty")
 endif()
 
@@ -79,91 +79,80 @@ if("https://github.com/google/googletest/archive/5376968f6948923e2411081fd9372e7
   message(FATAL_ERROR "REMOTE can't be empty")
 endif()
 
-if(EXISTS "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
+if(EXISTS "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(STATUS "File already exists and hash match (skip download):
-  file='C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'
+  file='/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'
   =''"
       )
       return()
     else()
       message(STATUS "File already exists but hash mismatch. Removing...")
-      file(REMOVE "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
+      file(REMOVE "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
     endif()
   else()
     message(STATUS "File already exists but no hash specified (use URL_HASH):
-  file='C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'
+  file='/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
+    file(REMOVE "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(STATUS "Downloading...
-   dst='C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'
-   timeout='none'
-   inactivity timeout='none'"
+   dst='/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip'
+   timeout='none'"
 )
-set(download_retry_codes 7 6 8 15)
-set(skip_url_list)
-set(status_code)
+
 foreach(i RANGE ${retry_number})
-  if(status_code IN_LIST download_retry_codes)
-    sleep_before_download(${i})
-  endif()
+  sleep_before_download(${i})
+
   foreach(url https://github.com/google/googletest/archive/5376968f6948923e2411081fd9372e71a59d8e77.zip)
-    if(NOT url IN_LIST skip_url_list)
-      message(STATUS "Using src='${url}'")
+    message(STATUS "Using src='${url}'")
 
-      
-      
-      
-      
+    
+    
+    
+    
 
-      file(
+    file(
         DOWNLOAD
-        "${url}" "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip"
+        "${url}" "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip"
         SHOW_PROGRESS
         # no TIMEOUT
-        # no INACTIVITY_TIMEOUT
         STATUS status
         LOG log
         
         
-        )
+    )
 
-      list(GET status 0 status_code)
-      list(GET status 1 status_string)
+    list(GET status 0 status_code)
+    list(GET status 1 status_string)
 
-      if(status_code EQUAL 0)
-        check_file_hash(has_hash hash_is_good)
-        if(has_hash AND NOT hash_is_good)
-          message(STATUS "Hash mismatch, removing...")
-          file(REMOVE "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
-        else()
-          message(STATUS "Downloading... done")
-          return()
-        endif()
+    if(status_code EQUAL 0)
+      check_file_hash(has_hash hash_is_good)
+      if(has_hash AND NOT hash_is_good)
+        message(STATUS "Hash mismatch, removing...")
+        file(REMOVE "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/5376968f6948923e2411081fd9372e71a59d8e77.zip")
       else()
-        string(APPEND logFailedURLs "error: downloading '${url}' failed
-        status_code: ${status_code}
-        status_string: ${status_string}
-        log:
-        --- LOG BEGIN ---
-        ${log}
-        --- LOG END ---
-        "
-        )
-      if(NOT status_code IN_LIST download_retry_codes)
-        list(APPEND skip_url_list "${url}")
-        break()
+        message(STATUS "Downloading... done")
+        return()
       endif()
+    else()
+      string(APPEND logFailedURLs "error: downloading '${url}' failed
+       status_code: ${status_code}
+       status_string: ${status_string}
+       log:
+       --- LOG BEGIN ---
+       ${log}
+       --- LOG END ---
+       "
+      )
     endif()
-  endif()
   endforeach()
 endforeach()
 

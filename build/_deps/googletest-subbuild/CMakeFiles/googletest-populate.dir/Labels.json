@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/3a24e939e2ea99c01af076030b550b57/googletest-populate.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/6c5867e095d32666f252d51f72e96a9e/googletest-populate-complete.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-build.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-configure.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-download.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-install.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-mkdir.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-patch.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-test.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
 		},
 		{
-			"file" : "C:/Users/pawel/Desktop/Tietoevry/player/build/_deps/googletest-subbuild/CMakeFiles/bd4848a2af4f28fd846abfb7611ba7ff/googletest-populate-update.rule"
+			"file" : "/home/stud/player/game/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
 		}
 	],
 	"target" : 
