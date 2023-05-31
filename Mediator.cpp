@@ -54,7 +54,7 @@ void Mediator::generateStartingStatus()
 
         for (int j = 0; static_cast<size_t>(j) < data.size(); ++j)
         {
-            std::pair<int, int> tempPair = {i, j};
+            std::pair<int, int> tempPair = {j, i};
             switch (data[j])
             {
             case BASE_OF_TOUR_TAKER:
@@ -77,8 +77,8 @@ void Mediator::generateStartingStatus()
     std::ofstream statusFile(statusPath);
 
     statusFile << DEFAULT_GOLD_AMOUNT << std::endl;
-    statusFile << BASE_OF_TOUR_TAKER << " " << 0 << " " << tourTakerBase.first << " " << tourTakerBase.second << " " << BASE_DURABILITY << " " << NOT_PRODUCING << std::endl;
-    statusFile << BASE_OF_TOUR_WATCHER << " " << 1 << " " << tourWatcherBase.first << " " << tourWatcherBase.second << " " << BASE_DURABILITY << " " << NOT_PRODUCING << std::endl;
+    statusFile << OWNED_BY_TOUR_TAKER << " " << BASE_CLASS_LETTER << " " << 0 << " " << tourTakerBase.first << " " << tourTakerBase.second << " " << BASE_DURABILITY << " " << NOT_PRODUCING << std::endl;
+    statusFile << OWNED_BY_TOUR_WATCHER << " " << BASE_CLASS_LETTER << " " << 1 << " " << tourWatcherBase.first << " " << tourWatcherBase.second << " " << BASE_DURABILITY << " " << NOT_PRODUCING << std::endl;
 
     statusFile.close();
 }

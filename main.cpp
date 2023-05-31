@@ -3,6 +3,7 @@
 #include <ctime>
 #include <chrono>
 #include <thread>
+#include <unistd.h>
 
 #include "consts.h"
 #include "FileValidator.h"
@@ -41,14 +42,21 @@ int main(int argc, char** argv)
     Mediator mediator(mapFilePath, statusFilePath, ordersFilePath, timeLimit);
     mediator.generateStartingStatus();
 
-    std::string endOfStartPath = " " + mapFilePath + " " + statusFilePath + " " + ordersFilePath + "&";
-    std::string player1StartPath = player1ProgramPath + endOfStartPath;
-    std::string player2StartPath = player2ProgramPath + endOfStartPath;
+    std::string endOfStartPath = " " + mapFilePath + " " + statusFilePath + " " + ordersFilePath;
+    std::string player1StartPath = "./" + player1ProgramPath + endOfStartPath;
+    std::string player2StartPath = "./" + player2ProgramPath + endOfStartPath;
 
+    std::cout << player1StartPath << std::endl; 
+
+    if (!access(player1ProgramPath.c_str(), X_OK) || !access(player1ProgramPath.c_str(), X_OK))
+    {
+        throw std::invalid_argument(INCORRECT_PLAYER);
+    }
 
     // even index means program 1 odd means program 2
     for(int i = 0; i < TOURS_LIMIT; ++i)
     {
+        std::cout << "TOUR NUMBER: " << std::to_string(i) << std::endl;
         std::string programPath = (i % 2 == 0 ? player1StartPath : player1StartPath);
         std::chrono::seconds timeout(timeLimit);
 

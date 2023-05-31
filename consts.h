@@ -61,7 +61,7 @@ static constexpr char WORKER_CLASS_LETTER = 'W';
 
 // Base
 static constexpr int BASE_DURABILITY = 200;
-static constexpr char BASE_CLASS_LETTER = 'W';
+static constexpr char BASE_CLASS_LETTER = 'B';
 
 // Game rules
 static constexpr char OWNED_BY_TOUR_TAKER = 'P';
@@ -86,6 +86,7 @@ static const std::string NO_STATUS_FILE = "Status file not found at path: ";
 static const std::string NO_MAP_FILE = "Map file not found at path: ";
 static const std::string NO_ORDERS_FILE = "Orders file not found at path: ";
 static const std::string NO_FILE = "File not found at path: ";
+static const std::string INCORRECT_PLAYER = "One or more players incorrect!";
 
 // Match results
 static const std::string PLAYER1_WON = "Congratulations for winning to player1!";
