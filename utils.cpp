@@ -43,7 +43,10 @@ std::vector<std::string> readLinesFromFile(const std::string &filePath)
     // switching base numbers
     while (std::getline(file, line))
     {
-        lines.push_back(line);
+        if(!line.empty())
+        {
+            lines.push_back(line);
+        }
     }
     return lines;
 }
@@ -69,5 +72,5 @@ int calculateDistance(int posx1, int posy1, int posx2, int posy2)
 
 bool isNaturalNumber(const std::string& toValidation)
 {
-    return toValidation.find_first_not_of("0123456789") != std::string::npos;
+    return toValidation.find_first_not_of("0123456789") == std::string::npos;
 }

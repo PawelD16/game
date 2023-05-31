@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/mediator.dir/main.cpp.o CMakeFiles/mediator.dir/FileValidator.cpp.o CMakeFiles/mediator.dir/Mediator.cpp.o CMakeFiles/mediator.dir/utils.cpp.o -o mediator  -lpthread 

@@ -24,10 +24,10 @@ public:
     void switchTourAndDataForOtherPlayer();
     bool updateGameStatusWithOrdersAndValidateWinner();
     std::pair<int, int> tallyUpUnits();
-private:
+// private:
     int timeLimit;
-    int player1Gold;
-    int player2Gold;
+    long player1Gold;
+    long player2Gold;
 
     char player1Producing;
     char player2Producing;

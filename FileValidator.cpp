@@ -7,7 +7,22 @@ bool FileValidator::checkIfFilesAreCorrect(const std::string &mapPath, const std
 	units.clear();
 	hasAttacked = false;
 
-	return !validateMap(mapPath) && !validateStatus(statusPath) && !validateOrders(ordersPath);
+	if (!validateMap(mapPath))
+	{
+		return false;
+	}
+
+	if (!validateStatus(statusPath))
+	{
+		return false;
+	}
+
+	if (!validateOrders(ordersPath))
+	{
+		return false;
+	}
+	return true;
+	//return !validateMap(mapPath) && !validateStatus(statusPath) && !validateOrders(ordersPath);
 }
 
 bool FileValidator::validateStatusLineAndPlaceOnMap(const std::string &line)
@@ -38,7 +53,7 @@ bool FileValidator::validateStatusLineAndPlaceOnMap(const std::string &line)
 	char productionUnit;
 
 	// position in X and Y axis shouldn't go outside the map in any of the directions
-	if (posX < 0 || posX > mapRepresentation.size() - 1 || posY < 0 || posY > mapRepresentation[0].size() - 1)
+	if (posX < 0 || posX > mapRepresentation[0].size() - 1 || posY < 0 || posY > mapRepresentation.size() - 1)
 	{
 		return false;
 	}
@@ -50,7 +65,7 @@ bool FileValidator::validateStatusLineAndPlaceOnMap(const std::string &line)
 	}
 
 	// checking if durability isnt skewed
-	if (durability <= UNIT_DURABILITY_MAP.at(unitType[0]) && durability > 0)
+	if (durability > UNIT_DURABILITY_MAP.at(unitType[0]) && durability <= 0)
 	{
 		return false;
 	}
@@ -72,6 +87,7 @@ bool FileValidator::validateStatusLineAndPlaceOnMap(const std::string &line)
 	}
 
 	std::tuple<char, char, int, int, char, int> unitTuple(owner[0], unitType[0], posX, posY, productionUnit, UNIT_SPEED.at(unitType[0]));
+
 	auto result = units.try_emplace(unitID, unitTuple);
 
 	// result is a tuple with an iterator and a bool with information about success of emplacing the element.
@@ -88,9 +104,9 @@ bool FileValidator::placeOnMapAndVerifyIfOwnershipOverlap(int posX, int posY, st
 	{
 		keys.push_back(kv.first);
 	}
-
+	bool a = std::find(keys.begin(), keys.end(), owner[0]) == keys.end();
 	// verifying owner (whether it is a correct char)
-	if (owner.length() != 1 || std::find(keys.begin(), keys.end(), owner[0]) == keys.end())
+	if (owner.length() != 1 || a )
 	{
 		return false;
 	}
@@ -120,11 +136,12 @@ bool FileValidator::validateMap(const std::string &mapPath)
 
 	std::string possibleChars(values.begin(), values.end());
 	possibleChars += NEUTRAL_POSITION;
-	possibleChars += FORBINDDEN_POSITION + MINE_POSITION;
+	possibleChars += FORBINDDEN_POSITION;
+	possibleChars += MINE_POSITION;
 
 	for (int i = 0; static_cast<size_t>(i) < map.size(); ++i)
 	{
-		mapRepresentation[i] = std::vector<char>(map[i].begin(), map[i].end());
+		mapRepresentation.push_back(std::vector<char>(map[i].begin(), map[i].end()));
 
 		// checking whether every line contains the same amount of chars
 		if (map[i].size() != map[0].size())
@@ -158,7 +175,6 @@ bool FileValidator::validateStatus(const std::string &statusPath)
 
 	for (int i = 1; static_cast<size_t>(i) < status.size(); ++i)
 	{
-
 		// incorrect size or data means that the file is in some way corrupted
 		// working with it has no use
 		if (!validateStatusLineAndPlaceOnMap(status[i]))
@@ -214,7 +230,7 @@ bool FileValidator::validateOrders(const std::string &ordersPath)
 		{
 			auto canAttack = ALLOWED_ACTIONS_BY_UNIT_TYPE.at(ATTACK_ACTION);
 
-			if (!hasAttacked || std::find(canAttack.begin(), canAttack.end(), pType) != canAttack.end() || // can this unit even attack?
+			if (hasAttacked || std::find(canAttack.begin(), canAttack.end(), pType) == canAttack.end() || // can this unit even attack?
 				tokenizedOrder.size() != 3 ||
 				!isNaturalNumber(tokenizedOrder[2]))
 			{
@@ -243,20 +259,22 @@ bool FileValidator::validateOrders(const std::string &ordersPath)
 		{
 			auto canMove = ALLOWED_ACTIONS_BY_UNIT_TYPE.at(MOVE_ACTION);
 
-			if (std::find(canMove.begin(), canMove.end(), pType) != canMove.end() || // can this unit even move?
+			if (std::find(canMove.begin(), canMove.end(), pType) == canMove.end() || // can this unit even move?
 				tokenizedOrder.size() != 4 ||
 				!isNaturalNumber(tokenizedOrder[2]) ||
 				!isNaturalNumber(tokenizedOrder[3]))
 			{
 				return false;
 			}
-
+			eX = std::stoi(tokenizedOrder[2]);
+			eY = std::stoi(tokenizedOrder[3]);
 			int distance = calculateDistance(pX, pY, eX, eY);
-			if (std::stoi(tokenizedOrder[2]) < mapRepresentation[0].size() ||
-				std::stoi(tokenizedOrder[3]) < mapRepresentation.size() ||
+
+			if ( eX >= mapRepresentation[0].size() ||	//they are bigger or equal to 0, checked with isNaturalNumber
+				 eY >= mapRepresentation.size() ||
 				distance > pSpeed ||
-				mapRepresentation[pY][pX] != OWNED_BY_TOUR_WATCHER ||
-				mapRepresentation[pY][pX] != FORBINDDEN_POSITION)
+				mapRepresentation[pY][pX] == OWNED_BY_TOUR_WATCHER ||
+				mapRepresentation[pY][pX] == FORBINDDEN_POSITION)
 			{
 				return false;
 			}
@@ -267,7 +285,7 @@ bool FileValidator::validateOrders(const std::string &ordersPath)
 		case BUILD_ACTION:
 			auto canBuild = ALLOWED_ACTIONS_BY_UNIT_TYPE.at(BUILD_ACTION);
 
-			if (std::find(canBuild.begin(), canBuild.end(), pType) != canBuild.end() ||
+			if (std::find(canBuild.begin(), canBuild.end(), pType) == canBuild.end() ||
 				pBuilds != NOT_PRODUCING)
 			{
 				return false;

@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/stud/game/build",
+  "command": "/usr/bin/g++  -I/home/stud/game -g -std=gnu++17 -o CMakeFiles/mediator.dir/main.cpp.o -c /home/stud/game/main.cpp",
+  "file": "/home/stud/game/main.cpp"
+},
+{
+  "directory": "/home/stud/game/build",
+  "command": "/usr/bin/g++  -I/home/stud/game -g -std=gnu++17 -o CMakeFiles/mediator.dir/FileValidator.cpp.o -c /home/stud/game/FileValidator.cpp",
+  "file": "/home/stud/game/FileValidator.cpp"
+},
+{
+  "directory": "/home/stud/game/build",
+  "command": "/usr/bin/g++  -I/home/stud/game -g -std=gnu++17 -o CMakeFiles/mediator.dir/Mediator.cpp.o -c /home/stud/game/Mediator.cpp",
+  "file": "/home/stud/game/Mediator.cpp"
+},
+{
+  "directory": "/home/stud/game/build",
+  "command": "/usr/bin/g++  -I/home/stud/game -g -std=gnu++17 -o CMakeFiles/mediator.dir/utils.cpp.o -c /home/stud/game/utils.cpp",
+  "file": "/home/stud/game/utils.cpp"
+}
+]
