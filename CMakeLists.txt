@@ -3,8 +3,10 @@ project("player")
 add_executable(player "main.cpp")
 
 # Set C++ standard to C++17
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+# set(CMAKE_CXX_STANDARD 17)
+# set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
