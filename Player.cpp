@@ -180,6 +180,7 @@ void Player::takeATurn()
 	const auto startTime = std::chrono::high_resolution_clock::now();
 
 	gatherCurrentStatus();
+
 	drawMapAndGatherAvailableMines();
 
 	std::vector<std::string> orders;
@@ -196,15 +197,15 @@ void Player::takeATurn()
 	}
 	//______________________________________
 
-
+	
 	std::sort(availableMines.begin(), availableMines.end(), [this](auto&& PH1, auto&& PH2)
 	{
 		return distanceFromBaseComparator(std::forward<decltype(PH1)>(PH1), std::forward<decltype(PH2)>(PH2),
 		                                  playerBase);
 	});
-
+	
 	tryToProduce(orders);
-
+	
 	//______________________________________
 	if (isSecondLeftOfTimeLimit(startTime))
 	{
@@ -212,7 +213,7 @@ void Player::takeATurn()
 		return;
 	}
 	//______________________________________
-
+	
 	for (auto& i : ownUnits)
 	{
 		std::vector<std::vector<int>> mapClip = createMapClipForUnit(i);

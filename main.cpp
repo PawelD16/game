@@ -3,8 +3,8 @@
 
 #include "Player.h"
 
-int main(int argc, char** argv) {
-
+int main(int argc, char** argv) 
+{
 	if (argc != 5)
 	{
 		throw std::invalid_argument("Input correct agrs to console!");
