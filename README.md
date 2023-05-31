@@ -12,9 +12,11 @@ Outside libraries used:
   Easy and interplatform way of solving this problem.
   Installed by downloading from Boost.org and packaging with bcp.
   BCP installation process (from downloaded directory using sudo):
-    ./bootstrap.sh
-    ./b2 tools/bcp
-    ./b2 install tools/bcp
+  
+    * ./bootstrap.sh
+    * ./b2 tools/bcp
+    * ./b2 install tools/bcp
+    
   And running:
     bcp process.hpp <directory_with_source>
   
