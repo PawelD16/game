@@ -35,6 +35,9 @@ set(HEADERS
 # Include the header files directory
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
+find_package(Threads REQUIRED)
+target_link_libraries(mediator Threads::Threads)
+
 # Add the source and header files to the executable
 target_sources(mediator PRIVATE ${SOURCES} ${HEADERS})
 

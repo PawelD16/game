@@ -52,7 +52,7 @@ int main(int argc, char** argv)
         std::string programPath = (i % 2 == 0 ? player1StartPath : player1StartPath);
         std::chrono::seconds timeout(timeLimit);
 
-        std::thread program([&]() 
+        std::thread program([&programPath]() 
         {
             std::system(programPath.c_str());
         });
