@@ -34,7 +34,7 @@ std::vector<std::string> readLinesFromFile(const std::string &filePath)
     if (!file)
     {
         file.close();
-        throw std::runtime_error(No_FILE + filePath);
+        throw std::runtime_error(NO_FILE + filePath);
     }
 
     std::vector<std::string> lines;

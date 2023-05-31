@@ -85,7 +85,15 @@ static constexpr int TOURS_LIMIT = 2000;
 static const std::string NO_STATUS_FILE = "Status file not found at path: ";
 static const std::string NO_MAP_FILE = "Map file not found at path: ";
 static const std::string NO_ORDERS_FILE = "Orders file not found at path: ";
-static const std::string No_FILE = "File not found at path: ";
+static const std::string NO_FILE = "File not found at path: ";
+
+// Match results
+static const std::string PLAYER1_WON = "Congratulations for winning to player1!";
+static const std::string PLAYER2_WON = "Player2 has dominated!";
+static const std::string DRAW = "Draw!";
+static const std::string PLAYER1_DISQUALIFIED = "Player1 disqualified!";
+static const std::string PLAYER2_DISQUALIFIED = "Player2 disqualified";
+
 
 // Damages between units
 const std::map<char, int> UNITS_TO_INDEX_FOR_ATTACK_TABLE{

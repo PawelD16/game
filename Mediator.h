@@ -23,6 +23,7 @@ public:
     void generateStartingStatus();
     void switchTourAndDataForOtherPlayer();
     bool updateGameStatusWithOrdersAndValidateWinner();
+    std::pair<int, int> tallyUpUnits();
 private:
     int timeLimit;
     int player1Gold;

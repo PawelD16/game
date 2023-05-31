@@ -47,9 +47,9 @@ int main(int argc, char** argv)
 
 
     // even index means program 1 odd means program 2
-    for(int i=0;i<TOURS_LIMIT;++i)
+    for(int i = 0; i < TOURS_LIMIT; ++i)
     {
-        std::string programPath = (i%2 == 0 ? player1StartPath : player1StartPath);
+        std::string programPath = (i % 2 == 0 ? player1StartPath : player1StartPath);
         std::chrono::seconds timeout(timeLimit);
 
         std::thread program([&]() 
@@ -77,17 +77,44 @@ int main(int argc, char** argv)
         // run player 1 or 2 program while checking if time isn't up
          if (!validator.checkIfFilesAreCorrect(mapFilePath, statusFilePath, ordersFilePath) || !programFinished)
          {
-            // disqualify
+            if (i % 2 == 0)
+            {
+                std::cout << PLAYER1_DISQUALIFIED;
+            }
+            else
+            {
+                std::cout << PLAYER2_DISQUALIFIED;
+            }
          }
 
         if (mediator.updateGameStatusWithOrdersAndValidateWinner())
         {
-            // winner!
+            if (i % 2 == 0)
+            {
+                std::cout << PLAYER1_WON;
+            }
+            else
+            {
+                std::cout << PLAYER2_WON;
+            }
         }
         mediator.switchTourAndDataForOtherPlayer();
     }
 
-    // tally up units and determine winner!
+    std::pair<int, int> aliveUnits = mediator.tallyUpUnits();
+
+    if (aliveUnits.first > aliveUnits.second)
+    {
+        std::cout << PLAYER1_WON;
+    } 
+    else if (aliveUnits.first < aliveUnits.second)
+    {
+        std::cout << PLAYER2_WON;
+    }
+    else
+    {
+        std::cout << DRAW;
+    }
     
     return 0;
 }

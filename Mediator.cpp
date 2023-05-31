@@ -41,22 +41,16 @@ void Mediator::generateStartingStatus()
 {
     // no need to check if the bases exist and are in a correct amount
     // it is already validated by the validator
-    std::ifstream mapFileRead(mapPath);
+    std::vector<std::string> map = readLinesFromFile(mapPath);
 
-    if (!mapFileRead)
-    {
-        mapFileRead.close();
-        throw std::runtime_error(NO_MAP_FILE + mapPath);
-    }
-
-    // finding the bases
+    // for finding the bases coords
     std::pair<int, int> tourTakerBase;
     std::pair<int, int> tourWatcherBase;
 
     std::string line;
-    for (int i = 0; std::getline(mapFileRead, line); ++i)
+    for (int i = 0; static_cast<size_t>(i) < map.size(); ++i)
     {
-        std::vector<char> data(line.begin(), line.end());
+        std::vector<char> data(map[i].begin(), map[i].end());
 
         for (int j = 0; static_cast<size_t>(j) < data.size(); ++j)
         {
@@ -74,8 +68,6 @@ void Mediator::generateStartingStatus()
             }
         }
     }
-
-    mapFileRead.close();
 
     if (!doesFileExist(statusPath))
     {
@@ -373,4 +365,30 @@ std::vector<std::string> Mediator::addUnit(std::string player1BaseX, std::string
     }
     */
     return res;
+}
+
+std::pair<int, int> Mediator::tallyUpUnits()
+{
+    int player1UnitCounter = 0;
+    int player2UnitCounter = 0;
+    char player1CurrentChar = (isPlayer1Tour? OWNED_BY_TOUR_TAKER: OWNED_BY_TOUR_WATCHER);
+
+    std::vector<std::string> tempUnits = readLinesFromFile(statusPath);
+
+    for (int i = 1; static_cast<size_t>(i) < tempUnits.size(); ++i)
+    {
+        std::vector<std::string> tokens = tokenizeOnSpaces(tempUnits[i]);
+    
+         // File validator chacks taht only two types of units exist
+        if (tokens[0][0] == player1CurrentChar)
+        {
+            ++player1UnitCounter;
+        }
+        else 
+        {
+            ++player2UnitCounter;
+        }
+    }
+
+    return {player1UnitCounter, player2UnitCounter};
 }
