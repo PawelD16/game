@@ -107,13 +107,7 @@ bool FileValidator::placeOnMapAndVerifyIfOwnershipOverlap(int posX, int posY, st
 
 bool FileValidator::validateMap(const std::string &mapPath)
 {
-	std::ifstream mapFile(mapPath);
-
-	if (!mapFile)
-	{
-		mapFile.close();
-		throw std::runtime_error("Map file not found at path: " + mapPath);
-	}
+	std::vector<std::string> map = readLinesFromFile(mapPath);
 
 	// could have used just a "09612" string
 	// but doing it this way makes sure that is will work
@@ -128,24 +122,20 @@ bool FileValidator::validateMap(const std::string &mapPath)
 	possibleChars += NEUTRAL_POSITION;
 	possibleChars += FORBINDDEN_POSITION + MINE_POSITION;
 
-	std::string line;
-
-	for (int lineCounter = 0; std::getline(mapFile, line); ++lineCounter)
+	for (int i = 0; static_cast<size_t>(i) < map.size(); ++i)
 	{
-		std::vector<char> data(line.begin(), line.end());
-		mapRepresentation[lineCounter] = std::move(data);
+		mapRepresentation[i] = std::vector<char>(map[i].begin(), map[i].end());
 
 		// checking whether every line contains the same amount of chars
-		if (mapRepresentation[lineCounter].size() != mapRepresentation[0].size())
+		if (map[i].size() != map[0].size())
 		{
-			mapFile.close();
 			return false;
 		}
 
 		// checking whether there aren't any character that shouldn't be there
 		// if there were that would mean that the last player to interact with the file changed it
 		// even though that isn't allowed
-		if (line.find_first_not_of(possibleChars) != std::string::npos)
+		if (map[i].find_first_not_of(possibleChars) != std::string::npos)
 		{
 			return false;
 		}

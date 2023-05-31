@@ -20,6 +20,9 @@ public:
     std::string statusPath;
     std::string ordersPath;
 
+    void generateStartingStatus();
+    void switchTourAndDataForOtherPlayer();
+    bool updateGameStatusWithOrdersAndValidateWinner();
 private:
     int timeLimit;
     int player1Gold;
@@ -32,10 +35,6 @@ private:
     int player2ProductionTime;
 
     bool isPlayer1Tour;
-
-    void generateStartingStatus();
-    void switchTourAndDataForOtherPlayer();
-    void updateGameStatusWithOrders();
 
     void doSingleAction(std::map<int, std::vector<std::string>>& tokenizedUnits, std::vector<std::string>& tokenizedOrder, int currectTourBaseID);
 

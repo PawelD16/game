@@ -7,6 +7,7 @@
 #include <map>
 #include <unordered_map>
 #include <tuple>
+#include <algorithm>
 
 #include "consts.h"
 #include "utils.h"

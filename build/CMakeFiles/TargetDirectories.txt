@@ -1,3 +1,3 @@
-C:/Users/pawel/Desktop/Tietoevry/mediator/build/CMakeFiles/mediator.dir
-C:/Users/pawel/Desktop/Tietoevry/mediator/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/pawel/Desktop/Tietoevry/mediator/build/CMakeFiles/ZERO_CHECK.dir
+/home/stud/game/build/CMakeFiles/rebuild_cache.dir
+/home/stud/game/build/CMakeFiles/edit_cache.dir
+/home/stud/game/build/CMakeFiles/mediator.dir
