@@ -154,35 +154,37 @@ void Mediator::updateGameStatusWithOrders()
     std::vector<std::string> orders = readLinesFromFile(ordersPath);
 
     std::vector<std::string> tempUnits = readLinesFromFile(statusPath);
-    std::map<int, std::vector<std::string>> tokenizedUnits;    //map of units by their ID
-    int currentBaseTourID = 0 ;
-    int enemyBaseTourID = 0;
+    std::map<int, std::vector<std::string>> tokenizedUnits; // map of units by their ID
+    int currentBaseTourID = 0;
+    int watcherBaseTourID = 0;
 
     for (int i = 1; static_cast<size_t>(i) < tempUnits.size(); ++i)
     {
-		std::vector<std::string> tokens = tokenizeOnSpaces(tempUnits[i]);
-                                    // 2 is the position of unitID
+        std::vector<std::string> tokens = tokenizeOnSpaces(tempUnits[i]);
+        // 2 is the position of unitID
         tokenizedUnits.emplace(std::stoi(tokens[2]), tokens);
 
-        if (tokens[0] == OWNED_BY_TOUR_TAKER && tokens[1] == BASE_CLASS_LETTER)
+        // these will always be a single char, so taking [0] allows us to get this char
+        if (tokens[0][0] == OWNED_BY_TOUR_TAKER && tokens[1][0] == BASE_CLASS_LETTER)
         {
             currentBaseTourID = std::stoi(tokens[2]);
         }
-        else if (tokens[0] == OWNED_BY_TOUR_WATCHER && tokens[1] == BASE_CLASS_LETTER)
+        else if (tokens[0][0] == OWNED_BY_TOUR_WATCHER && tokens[1][0] == BASE_CLASS_LETTER)
         {
-            enemyBaseTourID = std::stoi(tokens[2]); 
+            watcherBaseTourID = std::stoi(tokens[2]);
         }
     }
 
     std::vector<std::string> possibleNewUnits = addUnit(
-        tokenizedUnits[currentBaseTourID][3], 
-        tokenizedUnits[currentBaseTourID][4], 
-        tokenizedUnits[enemyBaseTourID][3], 
-        tokenizedUnits[enemyBaseTourID][4],
-        tokenizedUnits.size());
+        tokenizedUnits[currentBaseTourID][3],
+        tokenizedUnits[currentBaseTourID][4],
+        tokenizedUnits[watcherBaseTourID][3],
+        tokenizedUnits[watcherBaseTourID][4],
+        static_cast<int>(tokenizedUnits.size())
+        );
 
     // do actions
-    for(const std::string& order : orders)
+    for (const std::string &order : orders)
     {
         std::vector<std::string> tokenizedOrder = tokenizeOnSpaces(order);
 
@@ -190,67 +192,115 @@ void Mediator::updateGameStatusWithOrders()
     }
 
     std::vector<std::string> newStatus;
-    for (const auto& kv : tokenizedUnits) 
+    for (const auto &kv : tokenizedUnits)
     {
-        std::string res;
-        for (size_t i = 0; i < kv.second.size(); ++i) 
+        // deleting (by not adding) killed units
+        if (std::stoi(kv.second[5]) <= 0)
         {
-        res += kv.second[i];
-        
-        if (i != kv.second.size() - 1) {
-            res += " ";
+            continue;
         }
-        
-    }
-    newStatus.push_back(res);
+
+        // recreating the units from vector to proper string
+        std::string res;
+        for (size_t i = 0; i < kv.second.size(); ++i)
+        {
+            res += kv.second[i];
+
+            if (i != kv.second.size() - 1)
+            {
+                res += " ";
+            }
+        }
+
+        newStatus.push_back(res);
     }
 
     newStatus.insert(newStatus.end(), possibleNewUnits.begin(), possibleNewUnits.begin());
-    
+
     printLinesToFile(statusPath, newStatus);
 }
 
-void Mediator::doSingleAction(std::map<int, std::vector<std::string>>& tokenizedUnits, std::vector<std::string>& tokenizedOrder, int currentBaseID)
+void Mediator::doSingleAction(std::map<int, std::vector<std::string>> &tokenizedUnits, std::vector<std::string> &tokenizedOrder, int currentBaseID)
 {
     // correctness of action types is already checked
     // here 1 is action type
-    switch(tokenizedOrder[1]){
-        case ATTACK_ACTION:
-            // 0 is attacker unitID, 2 is attacked unitID, 5 is durability                                                1 is unit type, which determines the damage
-            tokenizedUnits[2][5] = std::to_string(std::stoi(tokenizedUnits[2][5]) - ATTACK_TABLE[tokenizedUnits[tokenizedOrder[0]][1]][tokenizedUnits[tokenizedOrder[2]][1]]);
-            break;
-        case MOVE_ACTION:
-            tokenizedUnits[2][3] = tokenizedOrder[2];
-            tokenizedUnits[2][4] = tokenizedOrder[3];
-            break;
-        // we already checked whether the we can build 
-        case BUILD_ACTION:
-            tokenizedUnits[currentBaseID][6] = tokenizedOrder[2];
+    switch (tokenizedOrder[1][0])
+    {
+    case ATTACK_ACTION:
+        // 0 is attacker unitID, 2 is attacked unitID, 5 is durability, 1 is unit type, which determines the damage
+        tokenizedUnits[2][5] =
+            std::to_string(
+                std::stoi(tokenizedUnits[2][5]) -
+                ATTACK_TABLE.at(
+                    UNITS_TO_INDEX_FOR_ATTACK_TABLE.at(
+                        std::stoi(tokenizedUnits[std::stoi(tokenizedOrder[0])][1]))
+                    ).at(
+                    UNITS_TO_INDEX_FOR_ATTACK_TABLE.at(
+                        std::stoi(tokenizedUnits[std::stoi(tokenizedOrder[2])][1])))
+                    );
+        break;
+    case MOVE_ACTION:
+        tokenizedUnits[2][3] = tokenizedOrder[2];
+        tokenizedUnits[2][4] = tokenizedOrder[3];
+        break;
+    // we already checked whether the we can build
+    case BUILD_ACTION:
+        tokenizedUnits[currentBaseID][6] = tokenizedOrder[2];
 
-            if (isPlayer1Tour)
-            {
-                player1Producing = tokenizedOrder[2];
-                player1Gold -= UNIT_COST_TABLE[tokenizedOrder[2]];
-                player1ProductionTime = UNIT_BUILD_TIME_TABLE[tokenizedOrder[2]];
-            }
-            else
-            {
-                player2Producing = tokenizedOrder[2];
-                player2Gold -= UNIT_COST_TABLE[tokenizedOrder[2]];
-                player2ProductionTime = UNIT_BUILD_TIME_TABLE[tokenizedOrder[2]];
-            }
-            break;
+        if (isPlayer1Tour)
+        {
+            player1Producing = tokenizedOrder[2][0];
+            player1Gold -= UNIT_COST_TABLE.at(tokenizedOrder[2][0]);
+            player1ProductionTime = UNIT_BUILD_TIME_TABLE.at(tokenizedOrder[2][0]);
+        }
+        else
+        {
+            player2Producing = tokenizedOrder[2][0];
+            player2Gold -= UNIT_COST_TABLE.at(tokenizedOrder[2][0]);
+            player2ProductionTime = UNIT_BUILD_TIME_TABLE.at(tokenizedOrder[2][0]);
+        }
+        break;
     }
 }
 
 std::vector<std::string> Mediator::addUnit(std::string player1BaseX, std::string player1BaseY, std::string player2BaseX, std::string player2BaseY, int lastUnitID)
 {
     std::vector<std::string> res;
-    
+
+    auto processPlayerProduction = [&](char& playerProducing, int& playerProductionTime, bool isPlayer1Tour, std::string& playerBaseX, std::string& playerBaseY)
+    {
+        if (playerProducing != NOT_PRODUCING)
+        {
+            --playerProductionTime;
+
+            if (playerProductionTime <= 0)
+            {
+                std::string line;
+                line += (isPlayer1Tour ? OWNED_BY_TOUR_TAKER : OWNED_BY_TOUR_WATCHER);
+
+                line += " " + std::to_string(playerProducing) + " " +
+                        std::to_string(lastUnitID++) + " " +
+                        playerBaseX + " " +
+                        playerBaseY + " " +
+                        std::to_string(UNIT_DURABILITY_MAP.at(playerProducing)) + "\n";
+
+                playerProducing = NOT_PRODUCING;
+                res.push_back(line);
+            }
+        }
+    };
+
+    processPlayerProduction(player1Producing, player1ProductionTime, isPlayer1Tour, player1BaseX, player1BaseY);
+    processPlayerProduction(player2Producing, player2ProductionTime, !isPlayer1Tour, player2BaseX, player2BaseY);
+
+    return res;
+    /*
+    std::vector<std::string> res;
+
     if (player1Producing != NOT_PRODUCING)
     {
         --player1ProductionTime;
-        
+
         if (player1ProductionTime <= 0)
         {
             std::string line;
@@ -262,8 +312,8 @@ std::vector<std::string> Mediator::addUnit(std::string player1BaseX, std::string
             {
                 line += OWNED_BY_TOUR_WATCHER;
             }
-            
-            line += 
+
+            line +=
             " " +
             player1Producing +
             " " +
@@ -273,7 +323,7 @@ std::vector<std::string> Mediator::addUnit(std::string player1BaseX, std::string
             " " +
             player2BaseY +
             " " +
-            UNIT_DURABILITY_MAP[player1Producing] +
+            std::to_string(UNIT_DURABILITY_MAP[player1Producing]) +
             std::endl;
 
             player1Producing = NOT_PRODUCING;
@@ -284,7 +334,7 @@ std::vector<std::string> Mediator::addUnit(std::string player1BaseX, std::string
     if (player2Producing != NOT_PRODUCING)
     {
         --player2ProductionTime;
-        
+
         if (player2ProductionTime <= 0)
         {
             std::string line;
@@ -296,8 +346,8 @@ std::vector<std::string> Mediator::addUnit(std::string player1BaseX, std::string
             {
                 line += OWNED_BY_TOUR_WATCHER;
             }
-            
-            line += 
+
+            line +=
             " " +
             player2Producing +
             " " +
@@ -307,13 +357,13 @@ std::vector<std::string> Mediator::addUnit(std::string player1BaseX, std::string
             " " +
             player2BaseY +
             " " +
-            UNIT_DURABILITY_MAP[player2Producing] +
+            std::to_string(UNIT_DURABILITY_MAP[player2Producing]) +
             std::endl;
 
             player2Producing = NOT_PRODUCING;
             res.push_back(line);
         }
     }
-
+    */
     return res;
 }

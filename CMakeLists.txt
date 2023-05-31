@@ -18,7 +18,6 @@ set(SOURCES
 	FileValidator.cpp
     Mediator.cpp
     utils.cpp
-    main.cpp
 )
 
 # Add the header files for each class

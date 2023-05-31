@@ -61,3 +61,13 @@ std::vector<std::string> tokenizeOnSpaces(std::string toTokenize)
 
     return tokens;
 }
+
+int calculateDistance(int posx1, int posy1, int posx2, int posy2)
+{
+    return std::abs(posx1 - posx2) + std::abs(posy1 - posy2);
+}
+
+bool isNaturalNumber(const std::string& toValidation)
+{
+    return toValidation.find_first_not_of("0123456789") != std::string::npos;
+}

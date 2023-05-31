@@ -5,7 +5,6 @@
 #include <map>
 
 #include "consts.h"
-#include "FileValidator.h"
 #include "utils.h"
 
 class Mediator
@@ -41,6 +40,4 @@ private:
     void doSingleAction(std::map<int, std::vector<std::string>>& tokenizedUnits, std::vector<std::string>& tokenizedOrder, int currectTourBaseID);
 
     std::vector<std::string> addUnit(std::string player1BaseX, std::string player1BaseY, std::string player2BaseX, std::string player2BaseY, int lastUnitID);
-
-    FileValidator validator;
 };

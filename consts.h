@@ -88,7 +88,7 @@ static const std::string NO_ORDERS_FILE = "Orders file not found at path: ";
 static const std::string No_FILE = "File not found at path: ";
 
 // Damages between units
-const std::map<char, int> unitsToIndexInAttackTable{
+const std::map<char, int> UNITS_TO_INDEX_FOR_ATTACK_TABLE{
 	{KNIGHT_CLASS_LETTER, 0},
 	{SWORDSMAN_CLASS_LETTER, 1},
 	{ARCHER_CLASS_LETTER, 2},
@@ -109,7 +109,8 @@ const std::vector<std::vector<int>> ATTACK_TABLE{
 	{0, 0, 0, 0, 0, 0, 0, 0}		  // Base (cannot tryToAttack)
 };
 
-const std::vector<char> possibleUnitTypes{
+// this collection allows for easy verification of existing unit types
+const std::vector<char> POSSIBLE_UNIT_TYPES{
 	KNIGHT_CLASS_LETTER, 
 	SWORDSMAN_CLASS_LETTER, 
 	ARCHER_CLASS_LETTER, 
@@ -147,26 +148,50 @@ const std::map<char, int> UNIT_DURABILITY_MAP{
 {PIKEMAN_CLASS_LETTER, PIKEMAN_DURABILITY}, 
 {RAM_CLASS_LETTER, RAM_DURABILITY}, 
 {CATAPULT_CLASS_LETTER, CATAPULT_DURABILITY}, 
-{WORKER_CLASS_LETTER, WORKER_DURABILITY}
+{WORKER_CLASS_LETTER, WORKER_DURABILITY},
+{BASE_CLASS_LETTER, BASE_DURABILITY}
 };
 
-const std::map<char, char> playerTypesToBaseNumbers{
+// this collection allows for easy verification of existing players and their base numbers
+// It could be easily expanded if there were to be more players
+const std::map<char, char> PLAYER_TYPE_TO_BASE_NUM{
 	{OWNED_BY_TOUR_TAKER, BASE_OF_TOUR_TAKER},
 	{OWNED_BY_TOUR_WATCHER, BASE_OF_TOUR_WATCHER}};
 
-const std::map<char, std::vector<char>> allowedActionsToUnitTypes{
-	{ATTACK_ACTION, {possibleUnitTypes[0],
-					possibleUnitTypes[1],
-					possibleUnitTypes[2],
-					possibleUnitTypes[3],
-					possibleUnitTypes[4],
-					possibleUnitTypes[5],
-					possibleUnitTypes[6]}},
-	{MOVE_ACTION, {possibleUnitTypes[0],
-					possibleUnitTypes[1],
-					possibleUnitTypes[2],
-					possibleUnitTypes[3],
-					possibleUnitTypes[4],
-					possibleUnitTypes[5],
-					possibleUnitTypes[6]}},
-	{BUILD_ACTION, {possibleUnitTypes[7]}}};
+const std::map<char, int> UNIT_RANGE{
+{KNIGHT_CLASS_LETTER, KNIGHT_RANGE}, 
+{SWORDSMAN_CLASS_LETTER, SWORDSMAN_RANGE}, 
+{ARCHER_CLASS_LETTER, ARCHER_RANGE}, 
+{PIKEMAN_CLASS_LETTER, PIKEMAN_RANGE}, 
+{RAM_CLASS_LETTER, RAM_RANGE}, 
+{CATAPULT_CLASS_LETTER, CATAPULT_RANGE}, 
+{WORKER_CLASS_LETTER, WORKER_RANGE}
+};
+
+const std::map<char, int> UNIT_SPEED{
+{KNIGHT_CLASS_LETTER, KNIGHT_SPEED}, 
+{SWORDSMAN_CLASS_LETTER, SWORDSMAN_SPEED}, 
+{ARCHER_CLASS_LETTER, ARCHER_SPEED}, 
+{PIKEMAN_CLASS_LETTER, PIKEMAN_SPEED}, 
+{RAM_CLASS_LETTER, RAM_SPEED}, 
+{CATAPULT_CLASS_LETTER, CATAPULT_SPEED}, 
+{WORKER_CLASS_LETTER, WORKER_SPEED}
+};
+
+// maps actions to units that are allowed to do them
+const std::map<char, std::vector<char>> ALLOWED_ACTIONS_BY_UNIT_TYPE{
+	{ATTACK_ACTION, {POSSIBLE_UNIT_TYPES[0],
+					POSSIBLE_UNIT_TYPES[1],
+					POSSIBLE_UNIT_TYPES[2],
+					POSSIBLE_UNIT_TYPES[3],
+					POSSIBLE_UNIT_TYPES[4],
+					POSSIBLE_UNIT_TYPES[5],
+					POSSIBLE_UNIT_TYPES[6]}},
+	{MOVE_ACTION, {POSSIBLE_UNIT_TYPES[0],
+					POSSIBLE_UNIT_TYPES[1],
+					POSSIBLE_UNIT_TYPES[2],
+					POSSIBLE_UNIT_TYPES[3],
+					POSSIBLE_UNIT_TYPES[4],
+					POSSIBLE_UNIT_TYPES[5],
+					POSSIBLE_UNIT_TYPES[6]}},
+	{BUILD_ACTION, {POSSIBLE_UNIT_TYPES[7]}}};
